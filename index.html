@@ -59,7 +59,21 @@
 
         <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
       </div>
+    </section>  
+    <section id="form" data-nav="subscription">
+      <div class="landing__container">
+        <h2>Subscription</h2>
+        <form method = "post" id="subscription">
+          <label for="name">Name:</label>
+          <input type ="text"  name="name" required oninvalid="alert('Please fill out your name');"></form></br>
+          <label for="email">E-mail address: </label>    
+          <input type ="email"  name="email" required oninvalid="alert('Please fill out your e-mail address');"></br></br></br>
+          <input type="submit" value="Send" />
+        </form>
+        
+      </div>
     </section>
+
   </main>
   <footer class="page__footer">
     <p>&copy Udacity</p>
