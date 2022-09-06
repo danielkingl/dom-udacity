@@ -68,24 +68,47 @@ for (i = 0; i < landing.length; i++) {
     const item = document.createElement("li");
     const text = landing[i].getAttribute("data-nav");
     const link = landing[i].getAttribute("id");
-    item.innerHTML = `<a href=#>${text}</a>`;
+    item.innerHTML = `<a href="#${link}">${text}</a>`;
     navList.appendChild(item);
+    let newLink = item.querySelector("a");
+    newLink.addEventListener('click', event => {
+        event.preventDefault();
+        let target = document.querySelector(`#${link}`);
+        target.scrollIntoView({behavior: "smooth"});
+    } );
 }
 // form element to capture user's details and sending a message.
 
 const form = document.querySelector("form");
 form.addEventListener("submit", e => {
     e.preventDefault();
-    alert("thanks for submitting your details")
+    alert("thanks for submitting your details");
 });
+let removeActive = () => {
+    let activea = document.querySelector("a.active");
+    if(activea !=null){
+        activea.classList.remove("active");
+    }
+} 
 
-// lisening to a click event when the user click on one of the items in the menu, it will scroll down.
 
-const scroll = document.querySelectorAll("li");
-scroll.addEventListener('click', event => {
-    event.preventDefault();
-    scroll.scrollIntoView({behavior: "smooth"});
-} )
+function makeActive(){
+    for (const section of landing) {
+        const box = section.getBoundingClientRect();
+        //Find a value that works best, but 150 seems to be a good start.
+        removeActive();
+        if (box.top <= 150 && box.bottom >= 150) {
+        //apply active state on current section and corresponding Nav link
+        let id = section.getAttribute("id");
+        document.querySelector(`[href="#${id}"]`).classList.add("active")
+        }
+        
+     }
+  }
+
+  document.addEventListener("scroll", function() { makeActive();});
+
+
 
 
 
