@@ -68,16 +68,25 @@ for (i = 0; i < landing.length; i++) {
     const item = document.createElement("li");
     const text = landing[i].getAttribute("data-nav");
     const link = landing[i].getAttribute("id");
-    item.innerHTML = `<a href=#${link}>${text}</a>`;
+    item.innerHTML = `<a href=#>${text}</a>`;
     navList.appendChild(item);
 }
-// sending a message to the user after submitting the form and saving the data.
+// form element to capture user's details and sending a message.
 
-const form = document.querySelector("#subscription");
-form.addEventListener ("submit", (event) => {
-    event.preventDefault();
-    alert("Thank you for joining us");
-    const formData = new FormData(event.target);
-    const nameForm = formData.get("name");
-    const emailForm = formData.get("email");
+const form = document.querySelector("form");
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    alert("thanks for submitting your details")
 });
+
+// lisening to a click event when the user click on one of the items in the menu, it will scroll down.
+
+const scroll = document.querySelectorAll("li");
+scroll.addEventListener('click', event => {
+    event.preventDefault();
+    scroll.scrollIntoView({behavior: "smooth"});
+} )
+
+
+
+
