@@ -106,9 +106,14 @@ section {
   width: 100%;
   
 }
-
+#email:valid{
+  border-color: blue;
+}
 #email:invalid{
   border-color: red;
+}
+#name:valid{
+  border-color: blue;
 }
 #name:invalid{
   border-color: red;
