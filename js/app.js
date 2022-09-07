@@ -60,7 +60,8 @@
 // Set sections as active
 
 
-// going over a loop to create "li" elements and insert them into "ul" element. so when the user click on the item, he should refer to the right section in the page.
+// going over a loop to create "li" elements and insert them into "ul" element.
+// then createing an even for the click in the menu items to make the scroll to the refered section.
 
 const landing = document.querySelectorAll("section");
 const navList = document.querySelector("ul");
@@ -85,6 +86,7 @@ form.addEventListener("submit", e => {
     alert("thanks for submitting your details");
 });
 
+//removing the active class when the user is not in the same section.
 let removeActive = () => {
     let activea = document.querySelector("a.active");
     if(activea !=null){
@@ -92,7 +94,7 @@ let removeActive = () => {
     }
 } 
 
-
+// function to make the item's section activated and highlighted with yellow color.
 function makeActive(){
     for (const section of landing) {
         const box = section.getBoundingClientRect();
@@ -111,6 +113,7 @@ function makeActive(){
 
   document.addEventListener("scroll", function() { makeActive();});
 
+  // building the navagation hambuger for the mobile version
   const hambuger = document.querySelector("#menu");
   hambuger.addEventListener("click", e => {
     const select = document.querySelector("#navbar__list");

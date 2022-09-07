@@ -107,6 +107,13 @@ section {
   
 }
 
+#email:invalid{
+  border-color: red;
+}
+#name:invalid{
+  border-color: red;
+}
+
 /* Footer Styles */
 .page__footer {
   background: #000;
@@ -252,7 +259,7 @@ section.your-active-class .landing__container::after {
   align-items: center;
 }
 
-
+/* addressing the smaller devices*/
 @media screen and (max-width: 600px){
   #navbar__list{
     display: flex;
