@@ -10,6 +10,10 @@
 
 /* ---- Base Rules ---- */
 
+*{
+  box-sizing: border-box;
+}
+
 body {
   background: rgb(136, 203, 171);
   background: linear-gradient(
@@ -20,6 +24,7 @@ body {
   margin: 0;
   font-family: "Merriweather", serif;
   color: #fff;
+  padding: 1rem;
 }
 
 /* Typeography General*/
@@ -95,8 +100,11 @@ section {
   background: #fff;
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  padding: 1rem;
   z-index: 5;
+  width: 100%;
+  
 }
 
 /* Footer Styles */
@@ -245,16 +253,40 @@ section.your-active-class .landing__container::after {
 }
 
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 600px){
   #navbar__list{
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
-   
+    flex-direction: column;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    background-color: white;
+    row-gap: 1rem;
+    opacity: 0;
   }
-  nav ul li:hover {
-    background-color: rgb(47, 38, 114);
-    color: white;
-   }
+  .menu-style{
+    border: 2px solid black;
+    width: 32px;
+    height: 4px;
+    margin-bottom: .3rem;
+    border-radius: 0.5rem;
+  }
+  .navbar__menu {
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+  h2{
+    font-size: 2rem;
+  }
+    
+  #navbar__list.show{
+   
+    opacity: 1;
+    pointer-events: all;
+  }
   
 }
+
