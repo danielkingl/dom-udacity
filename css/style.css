@@ -234,7 +234,7 @@ section.your-active-class {
   );
 }
 a.active {
-  border-bottom: 2px solid yellow;
+  border: 2px solid blue;
 }
 
 section.your-active-class .landing__container::before {
