@@ -94,7 +94,7 @@ let removeActive = () => {
     }
 } 
 
-// function to make the item's section activated and highlighted with yellow color.
+// function to make the item's section activated and highlighted with background color.
 function makeActive(){
     for (const section of landing) {
         const box = section.getBoundingClientRect();
@@ -105,12 +105,13 @@ function makeActive(){
          let id = section.getAttribute("id");
          const activeClass = document.querySelector(`a[href="#${id}"]`)
          activeClass.classList.add("active");
+         //activeClass.classList.add(section);
         
         }
         
      }
   }
-
+  
   document.addEventListener("scroll", function() { makeActive();});
 
   // building the navagation hambuger for the mobile version

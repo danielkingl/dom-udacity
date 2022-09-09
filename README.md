@@ -1,5 +1,29 @@
-The project is about landing page that focus on the user experience and escpacially using the scrolling feature.
+# Javascript and the DOM
 
-When the user click on one of the items in the navigation bar, it will automatically scoll to the correct section and highlight the item with yellow color underneath. I used addEvenLisener for both of them.
+This project is a demostration of DOM manipulation using JS.
 
-The last section is the "subscription" where the user can enter his name and email address and if the details are valid, he will get a message saying that we got his details. if the details are not valid, for example, his email address missing the "@" sign, it will send an alert message.
+The project is a basic landing page with 4 sections plus subscribtion form.
+
+### creating the navigation menu and connecting to the different sections.
+
+The first thing that I did was to create 'li' elements inside 'ul'
+to go inside the navigation menu. those 'li' elements are connected to the correct section,
+so when the user click on one of the item in the navigation,
+the page will scroll down to the correct section.
+to create that, i used different methods, for example, 'getAttribute' to get the
+correct 'id' in the section and using a for loop to go over the different sections.
+so if you create other sections in the HTML file, it will automaticlly create new item links and refer to the specific section.
+
+### subscription form
+
+simple html code that create a form to capture the user's name and email address.
+in JS file, there is an EventListener that sends a message for the user after submitting their details.
+
+### active class
+
+activate the sections when they are displayed in viewport and highlights the corresponding items.
+I used getBoundingClientRect() to get the dimensions of the sections and activate them.
+
+## Authors
+
+- [@danielkingl](https://www.github.com/danielkingl)

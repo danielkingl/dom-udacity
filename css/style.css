@@ -234,7 +234,7 @@ section.your-active-class {
   );
 }
 a.active {
-  background-color: rgb(108, 108, 130);
+  background-color: rgb(104, 104, 133);
 }
 
 section.your-active-class .landing__container::before {
