@@ -93,26 +93,20 @@ let removeActive = () => {
         activea.classList.remove("active");
     }
 } 
-let removeActiveSection = () => {
-    let actives = document.querySelectorAll("active-section");
-    if(actives !=null){
-        actives.classList.remove("active-section");
-    }
-} 
 
-
-// function to make the item's section activated and highlighted with background color.
+// function to make the item's section activated and highlighted with yellow color.
 function makeActive(){
     for (const section of landing) {
         const box = section.getBoundingClientRect();
+   
         //Find a value that works best, but 150 seems to be a good start.
         if (box.top <= 150 && box.bottom >= 150) {
-         removeActive();
-        //apply active state on current section and corresponding Nav link
-         let id = section.getAttribute("id");
-         const activeClass = document.querySelector(`a[href="#${id}"]`)
-         activeClass.classList.add("active");
-         section.classList.add("active");
+            removeActive();
+           //apply active state on current section and corresponding Nav link
+            let id = section.getAttribute("id");
+            const activeClass = document.querySelector(`a[href="#${id}"]`)
+            activeClass.classList.add("active");
+            section.classList.add("active");
         }
         else{
             section.classList.remove("active");
@@ -120,29 +114,27 @@ function makeActive(){
         
      }
   }
+
   
-  document.addEventListener("scroll", function() { makeActive();});
+document.addEventListener("scroll", function() { makeActive();});
 
-  // building the navagation hambuger for the mobile version
-  const hambuger = document.querySelector("#menu");
-  hambuger.addEventListener("click", e => {
-    const select = document.querySelector("#navbar__list");
-    select.classList.toggle("show");
-    const allAnchors = document.querySelectorAll("nav a");
-    allAnchors.forEach(anchor =>{
-        anchor.addEventListener("click", ()=>{
-            select.classList.toggle("show");
-        }
-        )
-    }
-        ) 
-    
+// building the navagation hambuger for the mobile version
+const hambuger = document.querySelector("#menu");
+hambuger.addEventListener("click", e => {
+  const select = document.querySelector("#navbar__list");
+  select.classList.toggle("show");
+  const allAnchors = document.querySelectorAll("nav a");
+  allAnchors.forEach(anchor =>{
+      anchor.addEventListener("click", ()=>{
+          select.classList.toggle("show");
+      }
+      )
   }
+      ) 
+  
+}
 
-  )
-
-
-
+)
 
 
 

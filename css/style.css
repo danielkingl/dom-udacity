@@ -10,7 +10,7 @@
 
 /* ---- Base Rules ---- */
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -104,18 +104,17 @@ section {
   padding: 1rem;
   z-index: 5;
   width: 100%;
-  
 }
-#email:valid{
+#email:valid {
   border-color: blue;
 }
-#email:invalid{
+#email:invalid {
   border-color: red;
 }
-#name:valid{
+#name:valid {
   border-color: blue;
 }
-#name:invalid{
+#name:invalid {
   border-color: red;
 }
 
@@ -257,16 +256,15 @@ section.your-active-class .landing__container::after {
   }
 }
 
-
-#navbar__list{
+#navbar__list {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 /* addressing the smaller devices*/
-@media screen and (max-width: 600px){
-  #navbar__list{
+@media screen and (max-width: 600px) {
+  #navbar__list {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -278,27 +276,23 @@ section.your-active-class .landing__container::after {
     row-gap: 1rem;
     opacity: 0;
   }
-  .menu-style{
+  .menu-style {
     border: 2px solid black;
     width: 32px;
     height: 4px;
-    margin-bottom: .3rem;
+    margin-bottom: 0.3rem;
     border-radius: 0.5rem;
   }
   .navbar__menu {
     display: flex;
     justify-content: flex-end;
-    
   }
-  h2{
+  h2 {
     font-size: 2rem;
   }
-    
-  #navbar__list.show{
-   
+
+  #navbar__list.show {
     opacity: 1;
     pointer-events: all;
   }
-  
 }
-
