@@ -93,6 +93,13 @@ let removeActive = () => {
         activea.classList.remove("active");
     }
 } 
+let removeActiveSection = () => {
+    let actives = document.querySelectorAll("active-section");
+    if(actives !=null){
+        actives.classList.remove("active-section");
+    }
+} 
+
 
 // function to make the item's section activated and highlighted with background color.
 function makeActive(){
@@ -105,8 +112,10 @@ function makeActive(){
          let id = section.getAttribute("id");
          const activeClass = document.querySelector(`a[href="#${id}"]`)
          activeClass.classList.add("active");
-         //activeClass.classList.add(section);
-        
+         section.classList.add("active");
+        }
+        else{
+            section.classList.remove("active");
         }
         
      }
